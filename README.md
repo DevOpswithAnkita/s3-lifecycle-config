@@ -75,6 +75,13 @@ aws s3api put-bucket-lifecycle-configuration \
   --bucket your-bucket-name \
   --lifecycle-configuration file://lifecycle.json
 ```
+## Validate the JSON first:
+
+  cat lifecycle.json | jq .
+## Verify the policy was applied:
+
+  aws s3api get-bucket-lifecycle-configuration --bucket bucket-name
+
 ### Check if there are actual files inside these folders:
 
 aws s3 ls s3://bucketname/object/ --recursive --human-readable
