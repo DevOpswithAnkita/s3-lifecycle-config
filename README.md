@@ -75,6 +75,9 @@ aws s3api put-bucket-lifecycle-configuration \
   --bucket your-bucket-name \
   --lifecycle-configuration file://lifecycle.json
 ```
+### Check if there are actual files inside these folders:
+
+aws s3 ls s3://bucketname/object/ --recursive --human-readable
 
 ### Method 3: AWS Management Console
 
